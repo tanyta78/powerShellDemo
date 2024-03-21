@@ -24,3 +24,9 @@ $Users | Select-Object -Property Name, LastLogonDate, LastBadPasswordAttempt
 
 Get-Process | Get-Member | Out-Host -Paging
 Get-Process | Get-Member -MemberType Properties
+
+Show-Command –Name Get-ADUser # fail because activedirectory module is not available
+
+Get-Module -ListAvailable
+
+Get-EventLog –LogName Application –ComputerName LON-CL1, LON-DC1
